@@ -1,0 +1,18 @@
+{
+    "donnees_sat": 
+      {"inertie" : [0.017,0.0,0.0,0.0,0.017,0.0,0.0,0.0,0.021 ],
+	  "inv_inertie" : [58.824,0.,0.,0.,58.824,0.,0.,0;,47.619 ]}
+	  ,  
+	"donnes_cmg": 
+	   {"inertie":4.5e-6, "angle_b": 1.1345, "angles_ai":[0, pi/3, 2*pi/3, pi, 4*pi/3, 5*pi/3],"numbers_dynamixel":[101, 102, 103, 104, 105, 106],
+	   "velocity_flywheel":[{"number": 1, "pwm_values":[312, 331, 349, 368,390]}, 
+							{"number": 2, "pwm_values":[313, 332, 351,369,390]}, 
+							{"number": 3, "pwm_values":[312, 331,349,368,390]}, 
+							{"number": 4, "pwm_values":[312,331,350,368,390]}, 
+							{"number": 5, "pwm_values":[311,330,348,367,390]}, 
+							{"number": 6, "pwm_values":[312,331,349,368,390]}, 
+							{"number": 7, "pwm_values":[313,332,350,369,390]},
+							{"number": 8, "pwm_values":[312,331,350,368,390]}, 
+							{"number": 9, "pwm_values":[312, 331, 350, 368, 390]}],
+	   }
+}

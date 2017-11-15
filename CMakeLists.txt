@@ -187,7 +187,7 @@ install(FILES
 	config/flight1.json
 #   # myfile1
 #   # myfile2
-#   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
 
 #############
