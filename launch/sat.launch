@@ -30,6 +30,7 @@
 	<rosparam param="flywheel_ids">[0,1,2,3,12,13]</rosparam>
 	<!--rosparam param="flywheel_calibrations">[312,313,312,312,311,312]</rosparam>-->
         <rosparam param="flywheel_calibrations">[350,350,350,350,350,350]</rosparam>
+	<!--<rosparam param="flywheel_calibrations">[390,390,390,390,390,390]</rosparam>-->
     <param name="pwm_freq" value="50" />
   </node> 
 </launch>
