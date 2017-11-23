@@ -184,7 +184,12 @@ include_directories(
 ## Mark other files for installation (e.g. launch and bag files, etc.)
 install(FILES
 	launch/sat.launch
+	launch/imu.launch
+	launch/camshift.launch
 	config/flight1.json
+	config/flight2.json
+	config/flight3.json
+	yaml/orange_ball.yaml
 #   # myfile1
 #   # myfile2
    DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
