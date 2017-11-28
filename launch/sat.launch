@@ -6,6 +6,8 @@
   	<param name="parabola_list" value="$(find fyt_cfg)/config/flight1.json" />
   </node>
   
+  <include file="$(find joy_fyt)/launch/joy_fyt.launch"/>
+  
   <include file="$(find fyt_cfg)/launch/camshift.launch"/>
   <node name="filtre_camera" pkg="boucle_commande" type="Filtre_camera" ></node> 
   
@@ -31,9 +33,11 @@
     <param name="flywheel_init_signal" value="210" />
     <param name="flywheel_init_time" value="0.5" />
 	<rosparam param="flywheel_ids">[0,1,2,3,12,13]</rosparam>
-	<!--rosparam param="flywheel_calibrations">[312,313,312,312,311,312]</rosparam>-->
-        <rosparam param="flywheel_calibrations">[350,350,350,350,350,350]</rosparam>
+	<!--rosparam param="flywheel_calibrations">[312,313,312,312,311,313]</rosparam>-->
+        <rosparam param="flywheel_calibrations">[349,351,349,350,348,350]</rosparam>
 	<!--<rosparam param="flywheel_calibrations">[390,390,390,390,390,390]</rosparam>-->
     <param name="pwm_freq" value="50" />
   </node> 
+
+  <node name="recorder" pkg="rosbag" type="record" args="-o /home/pi/rosbags/flight /imu/filtre /camera/filtre /parabola/agconfig /parabola/guidage /boucle/commande /boucle/commande_moteur /fw/cmd /gimbal/cmd /gimbal/state /mae/state /mae/signal /boucle/omega_d /boucle/erreur_ang /boucle/hg" />
 </launch>
