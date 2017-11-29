@@ -28,7 +28,7 @@
   <node name="flywheel_driver" pkg="flywheel_driver" type="node" output="screen">
     <param name="flywheel_min_speed" value="5000" />
     <param name="flywheel_max_speed" value="14000" />
-    <param name="flywheel_calibrated_speed" value="6000" />
+    <param name="flywheel_calibrated_speed" value="10000" />
     <param name="flywheel_zero_signal" value="205" />
     <param name="flywheel_init_signal" value="210" />
     <param name="flywheel_init_time" value="0.5" />
