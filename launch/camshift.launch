@@ -1,6 +1,6 @@
 <launch>
   <arg name="cam_frame_rate" default="10.0"/>
-  <arg name="config_name" default="$(find fyt_cfg)/yaml/orange_ball.yaml"/>
+  <arg name="config_name" default="$(find fyt_cfg)/yaml/green.yaml"/>
   <arg name="video_name" default="none"/>
   <arg name="feedback_name" default="none"/>
   
