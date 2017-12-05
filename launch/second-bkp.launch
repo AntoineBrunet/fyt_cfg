@@ -1,0 +1,43 @@
+<launch>
+  <node name="safety" pkg="safety" type="node" />
+  <node name="mae" pkg="fyt_mae" type="node" output="screen" />
+  <node name="panel" pkg="panel" type="node" />
+  <node name="gestion_parabole" pkg="gestion_parabole" type="node" output="screen">
+  	<param name="parabola_list" value="$(find fyt_cfg)/config/flight2b.json" />
+  </node>
+  
+  <include file="$(find joy_fyt)/launch/joy_fyt.launch"/>
+  
+  <include file="$(find fyt_cfg)/launch/camshift_nofb.launch"/>
+  <node name="filtre_camera" pkg="boucle_commande" type="Filtre_camera" ></node> 
+  
+  <include file="$(find fyt_cfg)/launch/imu.launch"/>
+  <node name="filtre_imu" pkg="boucle_commande" type="Filtre_IMU_simplifie" ></node> 
+
+  <node name="pilotage" pkg="boucle_commande" type="LoiPilotage" /> 
+  <node name="guidage" pkg="boucle_commande" type="guidage_integre" output="screen" /> 
+  <node name="gestion_gimbal" pkg="boucle_commande" type="Gestion_gimbal" />
+  
+  <node name="gimbal_driver" pkg="gimbal_driver" type="node" >
+	<rosparam param="gimbal_ids">[101,102,103,104,105,106]</rosparam>
+	<rosparam param="gimbal_dev">/dev/ttyUSB0</rosparam>
+	<rosparam param="gimbal_baud">1000000</rosparam>
+	<rosparam param="gimbal_protocol_version">2.0</rosparam>
+	<rosparam param="gimbal_pub_freq">200</rosparam>
+  </node>
+  <node name="flywheel_driver" pkg="flywheel_driver" type="node" output="screen">
+    <param name="flywheel_min_speed" value="5000" />
+    <param name="flywheel_max_speed" value="14000" />
+    <param name="flywheel_calibrated_speed" value="10000" />
+    <param name="flywheel_zero_signal" value="205" />
+    <param name="flywheel_init_signal" value="210" />
+    <param name="flywheel_init_time" value="0.5" />
+	<rosparam param="flywheel_ids">[0,1,2,3,12,13]</rosparam>
+	<!--rosparam param="flywheel_calibrations">[312,313,312,312,311,313]</rosparam>-->
+        <rosparam param="flywheel_calibrations">[349,351,349,350,348,350]</rosparam>
+	<!--<rosparam param="flywheel_calibrations">[390,390,390,390,390,390]</rosparam>-->
+    <param name="pwm_freq" value="50" />
+  </node> 
+
+  <node name="recorder" pkg="rosbag" type="record" args="-o /home/pi/rosbags/flight /imu/filtre /camera/filtre /parabola/agconfig /parabola/guidage /boucle/commande /boucle/commande_moteur /fw/cmd /gimbal/cmd /gimbal/state /mae/state /mae/signal /boucle/omega_d /boucle/erreur_ang /boucle/hg" />
+</launch>
