@@ -2,7 +2,7 @@
   <arg name="cam_frame_rate" default="10.0"/>
   <arg name="config_name" default="$(find fyt_cfg)/yaml/green_led.yaml"/>
   <arg name="video_name" default="none"/>
-  <arg name="feedback_name" default="/feedback"/>
+  <arg name="feedback_name" default="none"/>
   
   <!-- start the camera -->
   <node type="raspicam_node" pkg="raspicam_node" name="raspicam_node">
@@ -21,6 +21,4 @@
   <!-- start the camshift node -->
   <node type="camshift_node" pkg="camshift_ros" name="camshift" args=" --image /republish/image_raw --state /camshift/state --feedback $(arg feedback_name) --config $(arg config_name) --video $(arg video_name)"/>
   
-  <node name="republish_feedback" type="republish" pkg="image_transport" args="raw in:=$(arg feedback_name) compressed out:=$(arg feedback_name)/compressed" />
-
 </launch>

@@ -8,7 +8,7 @@
   
   <include file="$(find joy_fyt)/launch/joy_fyt.launch"/>
   
-  <include file="$(find fyt_cfg)/launch/camshift.launch"/>
+  <include file="$(find fyt_cfg)/launch/camshift_nofb.launch"/>
   <node name="filtre_camera" pkg="boucle_commande" type="Filtre_camera" ></node> 
   
   <include file="$(find fyt_cfg)/launch/imu.launch"/>

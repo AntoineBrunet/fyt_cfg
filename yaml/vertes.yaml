@@ -1,0 +1,22 @@
+%YAML:1.0
+objOrigHist: !!opencv-matrix
+   rows: 32
+   cols: 1
+   dt: f
+   data: [ 0., 0., 0., 0., 0., 0., 0., 1.45129621e-01, 3.84230652e+01,
+       1.49106171e+02, 9.79624927e-01, 2.17694417e-02, 9.24475670e+00,
+       255., 5.51492572e-01, 0., 0., 0., 6.97347832e+00, 0., 0., 0., 0.,
+       0., 0., 0., 0., 0., 0., 0., 0., 0. ]
+vmin: 50
+vmax: 256
+smin: 120
+smax: 256
+diffMode: 0
+similarityThreshold: 5.0000000745058060e-02
+backProjThreshold: 3.0000001192092896e-01
+binaryBackProjection: 0
+hsize: 32
+hranges: [ 0., 180. ]
+searchRatio: 1.
+minArea: 100
+maxArea: 2073600
