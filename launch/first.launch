@@ -3,7 +3,7 @@
   <node name="mae" pkg="fyt_mae" type="node" output="screen" />
   <node name="panel" pkg="panel" type="node" />
   <node name="gestion_parabole" pkg="gestion_parabole" type="node" output="screen">
-  	<param name="parabola_list" value="$(find fyt_cfg)/config/flight2a.json" />
+  	<param name="parabola_list" value="$(find fyt_cfg)/config/flight3a.json" />
   </node>
   
   <include file="$(find joy_fyt)/launch/joy_fyt.launch"/>

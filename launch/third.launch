@@ -3,7 +3,7 @@
   <node name="mae" pkg="fyt_mae" type="node" output="screen" />
   <node name="panel" pkg="panel" type="node" />
   <node name="gestion_parabole" pkg="gestion_parabole" type="node" output="screen">
-  	<param name="parabola_list" value="$(find fyt_cfg)/config/flight3b.json" />
+  	<param name="parabola_list" value="$(find fyt_cfg)/config/flight3c.json" />
   </node>
   
   <include file="$(find joy_fyt)/launch/joy_fyt.launch"/>
@@ -11,7 +11,7 @@
   <include file="$(find fyt_cfg)/launch/imu.launch"/>
   <node name="filtre_imu" pkg="boucle_commande" type="Filtre_IMU_simplifie" ></node> 
 
-  <node name="pilotage" pkg="boucle_commande" type="LoiPilotage" /> 
+  <node name="pilotage" pkg="boucle_commande" type="LoiPilotage_cov" /> 
   <node name="guidage" pkg="boucle_commande" type="guidage_integre" output="screen" /> 
   <node name="gestion_gimbal" pkg="boucle_commande" type="Gestion_gimbal" />
   
